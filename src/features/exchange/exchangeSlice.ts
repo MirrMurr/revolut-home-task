@@ -63,10 +63,10 @@ const getRates = (base: string): AppThunk => async (dispatch) => {
         console.log('Getting rates...')
 
         /// =======
-        dispatch(setFXRatesSuccess(RATES_USD_MOCK))
+        // dispatch(setFXRatesSuccess(RATES_USD_MOCK))
         /// +++++++
-        // const response: any = await ExchangeService.getLatestRates(base)
-        // dispatch(setFXRatesSuccess(response.rates))
+        const response: any = await ExchangeService.getLatestRates(base)
+        dispatch(setFXRatesSuccess(response.rates))
         /// =======
     } catch (e: any) {
         dispatch(setError(e.toString()))

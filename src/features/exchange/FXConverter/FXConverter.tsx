@@ -126,7 +126,7 @@ const FXConverter: React.FC<IFXConverterProps> = ({ rates }) => {
     return (
         <Row justify="center" align="middle" style={{ height: '100vh' }}>
             <Col>
-
+                {/* Navigation */}
                 <Row justify="space-between">
                     <Col>
                         <Button type="link" icon={<HomeOutlined />}>
@@ -137,14 +137,20 @@ const FXConverter: React.FC<IFXConverterProps> = ({ rates }) => {
                         <Disclaimer />
                     </Col>
                 </Row>
+
+                {/* Converter widget */}
                 <div className={styles.container}>
 
+                    {/* Title */}
                     <h1 className={styles.title}>{`${isSelling ? 'Sell' : 'Buy'} ${baseAccount.currency}`}</h1>
 
+                    {/* Error regarding exchanging */}
                     <ErrorDisplay message={error} />
 
+                    {/* Rate indicator */}
                     <div className={styles.rateIndicator}>{`${baseAccount.currency} 1 = ${exchangeAccount.currency} ${rates[exchangeAccount.currency]}`}</div>
 
+                    {/* Inputs, Form */}
                     <Form
                         form={form}
                         layout="vertical"
@@ -183,6 +189,7 @@ const FXConverter: React.FC<IFXConverterProps> = ({ rates }) => {
                         </Button>
                     </Form>
 
+                    {/* Success feedback popup modal */}
                     <Modal
                         visible={feedbackModalVisible}
                         onCancel={handleModalClose}
