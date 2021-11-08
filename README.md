@@ -4,6 +4,15 @@
 
 This is application uses the Free plan of the ```https://openexchangerates.org/api/``` FX rates source api. This means that only the rates based on USD can be queried with 1000 queries / Month. The functionality of the widget would not change if the Developer plan was purchased, moreover mock data is also provided. Actual and mock data can be switched in the exchangeSlice's \"getRates\" thunk.
 
+## Adding own api key
+
+If you'd like to use your own ```https://openexchangerates.org/api/``` app id, then create/update a(n) ```.env``` file to the following:
+
+```bash
+REACT_APP_BACKEND_URL="https://openexchangerates.org/api/"
+REACT_APP_APP_ID="your_app_id"
+```
+
 ## Home page
 
 ![HomePage](./src/assets/HomePage.png)
