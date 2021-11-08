@@ -1,5 +1,5 @@
 import { Route, Switch } from 'react-router-dom'
-import FXConverter from '../features/exchange/FXConverter/FXConverter'
+import LifeCycleProvider from '../features/exchange/FXConverter/LifeCycleProvider/LifeCycleProvider'
 import HomePage from '../features/home/HomePage/HomePage'
 
 // TODO add Layout (LoggedInLayout)
@@ -11,7 +11,7 @@ const Routes = () => {
                 <HomePage />
             </Route>
             <Route exact path="/exchange">
-                <FXConverter />
+                <LifeCycleProvider />
             </Route>
         </Switch>
     )

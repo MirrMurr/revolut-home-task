@@ -1,0 +1,54 @@
+.container {
+    // background-color: lightgray;
+    border: 2px solid lightgray;
+    border-radius: 14px;
+    padding: 1rem 1.5rem;
+    width: 25rem;
+}
+
+.currency {
+    width: 100%;
+    // padding: 0.7rem 0.5rem;
+    margin: 1rem 0;
+}
+
+.formItemSelect, .formItemInput {
+    width: 100%;
+    // width: 100%;
+    margin: 0;
+    border: none;
+
+}
+
+.formItemSelect {
+    // background-color: red;
+}
+
+.formItemInput {
+    // background-color: blue;
+}
+
+.input {
+    border-radius: 10px;
+    // border: none;
+    &:focus, &:active {
+        border: none;
+        outline: 0;
+    }
+}
+
+.selector {
+    max-width: 5rem;
+}
+
+.selector > ant-select-selector {
+    border-radius: 10px;
+}
+
+.swapButton {
+    border-radius: 14px;
+}
+
+.submitButton {
+    border-radius: 8px;
+}

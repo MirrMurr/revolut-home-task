@@ -11,17 +11,11 @@ const axiosInstance: AxiosInstance = axios.create({
   withCredentials: false,
 });
 
-
-export const setAccessToken = (token: string) => {
-  axios.defaults.headers.common = { 'Authorization': `Bearer ${token}` }
-}
-
 // Add a request interceptor
 axiosInstance.interceptors.request.use(
   function (config) {
     // Do something before request is sent
-    console.log(config);
-
+    config.params = { ...config.params, app_id: process.env.REACT_APP_APP_ID }
     return config;
   },
   function (error) {
@@ -44,12 +38,14 @@ axiosInstance.interceptors.response.use(
       return Promise.reject(CommonError.TIMEOUT);
     }
     const error = errorObj.response;
+    console.log(error);
+
     if (error) {
       if (error.status === 401) {
         return Promise.reject(CommonError.UNAUTHORIZED);
       }
       else if (error.status === 403) {
-        return Promise.reject(CommonError.FORBIDDEN);
+        return Promise.reject(error.data.description);
       }
       else if (error.status === 409) {
         throw error.data;
