@@ -13,6 +13,7 @@ import useFormRules from '../../../hooks/useFormRules'
 import { ArrowDownOutlined, ArrowUpOutlined, HomeOutlined, MinusOutlined, PlusOutlined } from '@ant-design/icons'
 import Account from '../../../models/account'
 import { Link } from 'react-router-dom'
+import Disclaimer from '../../info/Disclaimer/Disclaimer'
 
 export const currencyOptions = Object.keys(Currency).map(currency => ({ value: currency, label: currency }))
 
@@ -125,9 +126,17 @@ const FXConverter: React.FC<IFXConverterProps> = ({ rates }) => {
     return (
         <Row justify="center" align="middle" style={{ height: '100vh' }}>
             <Col>
-                <Button type="link" icon={<HomeOutlined />}>
-                    <Link to="/"> Home</Link>
-                </Button>
+
+                <Row justify="space-between">
+                    <Col>
+                        <Button type="link" icon={<HomeOutlined />}>
+                            <Link to="/"> Home</Link>
+                        </Button>
+                    </Col>
+                    <Col>
+                        <Disclaimer />
+                    </Col>
+                </Row>
                 <div className={styles.container}>
 
                     <h1 className={styles.title}>{`${isSelling ? 'Sell' : 'Buy'} ${baseAccount.currency}`}</h1>

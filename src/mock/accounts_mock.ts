@@ -9,7 +9,10 @@ const ACCOUNTS_MOCK: Account[] = Object.keys(Currency).map(currency => {
             balance = 3396.42
             break;
         case Currency.USD:
-            balance = 0.13
+            balance = 1000.13
+            break;
+        case Currency.EUR:
+            balance = 987.46
             break;
         default:
             break;

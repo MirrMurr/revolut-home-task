@@ -18,9 +18,9 @@ interface IExchangeState {
 }
 
 const initialState: IExchangeState = {
-    rates: RATES_USD_MOCK,
-    accounts: ACCOUNTS_MOCK,
-    baseCurrency: Currency.EUR,
+    rates: RATES_USD_MOCK, // {}
+    accounts: ACCOUNTS_MOCK, // []
+    baseCurrency: Currency.USD,
 
     loading: false,
     error: undefined,
