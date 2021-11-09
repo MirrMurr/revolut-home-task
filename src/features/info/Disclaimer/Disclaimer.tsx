@@ -12,13 +12,19 @@ const Disclaimer = () => {
 
     return (
         <div>
-            <Button type="link" icon={<InfoCircleOutlined />} onClick={() => dispatch(disclaimerActions.setVisible(true))} />
+            <Button
+                type="link"
+                icon={<InfoCircleOutlined />}
+                onClick={() => dispatch(disclaimerActions.setVisible(true))}
+                data-testid="disclaimer-button"
+            />
             <Modal
                 visible={visible}
                 onCancel={() => dispatch(disclaimerActions.setVisible(false))}
                 footer={null}
+                data-testid="disclaimer-modal"
             >
-                <div className={styles.infoText}>
+                <div className={styles.infoText} data-testid="disclaimer-message">
                     {message}
                 </div>
             </Modal>

@@ -5,11 +5,12 @@ import Currency from "../../models/currency"
 import ExchangeService from "../../services/api/ExchangeService"
 import RATES_USD_MOCK from "../../mock/rates_usd_mock"
 import ACCOUNTS_MOCK from "../../mock/accounts_mock"
+import Rates from "../../models/rates"
 
 // TODO create rate interface/model instead of any
 
 interface IExchangeState {
-    rates: { [x: Currency | string]: number };
+    rates: Rates;
     accounts: Account[];
     baseCurrency: Currency;
 

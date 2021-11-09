@@ -1,9 +1,21 @@
-import React from 'react';
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import { render, screen } from './utils/test-utils'
+import App from './App'
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+// data-testid="id"
+// await  findByTestId('id')
+
+beforeAll(() => {
+    // ...
+})
+
+it('renders without crashing', async () => {
+    render(<App />)
+})
+
+it('renders greeting home page first with link to exchanger', () => {
+    render(<App />)
+    const greetElement = screen.getByText(/Hello/i)
+    const linkElement = screen.getByText(/Exchange/i)
+    expect(greetElement).toBeInTheDocument()
+    expect(linkElement).toBeInTheDocument()
 });

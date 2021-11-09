@@ -1,19 +1,19 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Form, Row, Col, Button, Modal, Spin } from 'antd'
+import { Link } from 'react-router-dom'
+import { ArrowDownOutlined, ArrowUpOutlined, HomeOutlined, MinusOutlined, PlusOutlined } from '@ant-design/icons'
 
-import { RootState } from '../../../store'
-import ErrorDisplay from '../../../components/ErrorDisplay/ErrorDisplay'
 import Currency from '../../../models/currency'
+import Account from '../../../models/account'
+import ErrorDisplay from '../../../components/ErrorDisplay/ErrorDisplay'
+import { RootState } from '../../../store'
 import { exchangeActions } from '../exchangeSlice'
+import useFormRules from '../../../hooks/useFormRules'
+import Disclaimer from '../../info/Disclaimer/Disclaimer'
+import CurrencySelectorFormItem from './CurrencySelector/CurrencySelector'
 
 import styles from "./FXConverter.module.scss"
-import CurrencySelectorFormItem from './CurrencySelector/CurrencySelector'
-import useFormRules from '../../../hooks/useFormRules'
-import { ArrowDownOutlined, ArrowUpOutlined, HomeOutlined, MinusOutlined, PlusOutlined } from '@ant-design/icons'
-import Account from '../../../models/account'
-import { Link } from 'react-router-dom'
-import Disclaimer from '../../info/Disclaimer/Disclaimer'
 
 export const currencyOptions = Object.keys(Currency).map(currency => ({ value: currency, label: currency }))
 
@@ -45,10 +45,6 @@ const FXConverter: React.FC<IFXConverterProps> = ({ rates }) => {
     useEffect(() => {
         dispatch(exchangeActions.setBaseCurrency(baseAccount.currency))
     }, [dispatch, baseAccount])
-
-    useEffect(() => {
-        console.log('RATES', rates)
-    }, [rates])
 
     useEffect(() => {
         // Refresh the balances when accounts change
@@ -157,6 +153,7 @@ const FXConverter: React.FC<IFXConverterProps> = ({ rates }) => {
                         onFinish={handleFormFinish}
                         onValuesChange={onValuesChanged}
                         initialValues={initialValues}
+                        data-testid="exchange-form"
                     >
                         <CurrencySelectorFormItem
                             name="baseAmount"

@@ -1,5 +1,12 @@
 # Foreign Exchange Converter
 
+## Quick start guide
+
+2 scripts are provided:
+
+- `yarn start` - starts the application on `https://localhost/3000`
+- `yarn test` - runs the test cases defined in `__test__` folders at each main feature-component
+
 ## Disclaimer
 
 This is application uses the Free plan of the ```https://openexchangerates.org/api/``` FX rates source api. This means that only the rates based on USD can be queried with 1000 queries / Month. The functionality of the widget would not change if the Developer plan was purchased, moreover mock data is also provided. Actual and mock data can be switched in the exchangeSlice's \"getRates\" thunk.
@@ -13,11 +20,13 @@ REACT_APP_BACKEND_URL="https://openexchangerates.org/api/"
 REACT_APP_APP_ID="your_app_id"
 ```
 
-## Home page
+## User interface
+
+### Home page
 
 ![HomePage](./src/assets/HomePage.png)
 
-## FX Converter
+### FX Converter
 
 ![Converter](./src/assets/Converter.png)
 
