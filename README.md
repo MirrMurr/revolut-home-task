@@ -9,7 +9,7 @@
 
 ## Disclaimer
 
-This is application uses the Free plan of the ```https://openexchangerates.org/api/``` FX rates source api. This means that only the rates based on USD can be queried with 1000 queries / Month. The functionality of the widget would not change if the Developer plan was purchased, moreover mock data is also provided. Actual and mock data can be switched in the exchangeSlice's \"getRates\" thunk.
+This application uses the Free plan of the ```https://openexchangerates.org/api/``` FX rates source api. This means that only the rates based on USD can be queried with 1000 queries / Month. The functionality of the widget would not change if the Developer plan was purchased, moreover mock data is also provided. Actual and mock data can be switched in the exchangeSlice's \"getRates\" thunk.
 
 ## Adding own api key
 
